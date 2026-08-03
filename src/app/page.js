@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { ReactLenis } from "lenis/react";
 
 import AnimatedCopy from "@/components/AnimatedCopy";
+import MagneticCards from "@/components/MagneticCards";
 import Navbar from "@/components/Navbar";
 
 export default function Home() {
@@ -59,6 +60,7 @@ export default function Home() {
           </AnimatedCopy>
         </div>
       </section>
+      <MagneticCards />
       <section className="banner-img">
         <img src="/img_1.jpg" alt="" />
       </section>

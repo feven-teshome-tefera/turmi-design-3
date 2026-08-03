@@ -323,3 +323,18 @@ section {
     padding: 1rem;
   }
 }
+
+@media (max-width: 767px) {
+  .hero + .about {
+    height: auto;
+    min-height: 100svh;
+    margin-top: 24px;
+    padding-block: 48px;
+  }
+
+  .about h1 {
+    font-size: 2.25rem;
+    letter-spacing: -0.05rem;
+    line-height: 1.25;
+  }
+}
