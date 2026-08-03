@@ -61,9 +61,6 @@ export default function Home() {
         </div>
       </section>
       <MagneticCards />
-      <section className="banner-img">
-        <img src="/img_1.jpg" alt="" />
-      </section>
       <section className="services">
         <div className="service">
           <div className="col">

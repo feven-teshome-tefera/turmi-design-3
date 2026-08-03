@@ -8,23 +8,23 @@ import styles from "./MagneticCards.module.css";
 const CARD_CONTENT = [
   {
     number: "01",
-    heading: "Ideas",
-    description: "Turn a spark of inspiration into something worth sharing.",
+    heading: "Register",
+    description: "Create farmer profiles with farm, crop, and seasonal details.",
   },
   {
     number: "02",
-    heading: "Design",
-    description: "Shape every detail with clarity, purpose, and personality.",
+    heading: "Map",
+    description: "Link every farm and plot record to its verified location.",
   },
   {
     number: "03",
-    heading: "Build",
-    description: "Bring thoughtful concepts to life through creative code.",
+    heading: "Monitor",
+    description: "Track field visits, crop progress, photos, and milestones.",
   },
   {
     number: "04",
-    heading: "Explore",
-    description: "Move your cursor and see how the cards respond.",
+    heading: "Work Offline",
+    description: "Capture data without internet and sync it when reconnected.",
   },
 ];
 

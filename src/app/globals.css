@@ -45,10 +45,6 @@ section {
   padding: 1rem;
 }
 
-.banner-img img {
-  border-radius: 1rem;
-}
-
 .hero {
   min-height: 420px;
   padding: 0;
