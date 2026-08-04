@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title>Administer contracts and connect markets</title>
+  <desc>Contract farming administration, harvest coordination and agricultural market access illustration.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F4FBF7"/>
+      <stop offset="100%" stop-color="#E8F5EC"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#0B2F21" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .title { font: 700 42px Arial, sans-serif; fill: #0B2F21; }
+      .phase { font: 700 22px Arial, sans-serif; fill: #2F7D4A; letter-spacing: 1px; }
+      .label { font: 700 27px Arial, sans-serif; fill: #0B2F21; }
+      .body { font: 400 18px Arial, sans-serif; fill: #466255; }
+      .small { font: 600 16px Arial, sans-serif; fill: #2F7D4A; }
+      .line { stroke: #2F7D4A; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .thin { stroke: #7DB88D; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .card { fill: #FFFFFF; stroke: #D7EBDD; stroke-width: 2; }
+      .accent { fill: #DDF1E3; }
+      .dark { fill: #0B2F21; }
+      .green { fill: #2F7D4A; }
+      .gold { fill: #E4B84F; }
+    </style>
+  </defs>
+  <rect width="1200" height="700" rx="36" fill="url(#bg)"/>
+
+  <text x="70" y="82" class="phase">PHASES 7–8</text>
+  <text x="70" y="132" class="title">Administer contracts and connect markets</text>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="185" width="500" height="430" rx="30" class="card"/>
+    <rect x="630" y="185" width="500" height="430" rx="30" class="card"/>
+  </g>
+
+  <!-- contract -->
+  <rect x="145" y="235" width="265" height="285" rx="24" fill="#FFFFFF" stroke="#2F7D4A" stroke-width="6"/>
+  <path d="M195 300h165M195 345h135M195 390h155" class="thin"/>
+  <path d="M225 465c45-45 90 35 145-20" stroke="#E4B84F" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <circle cx="440" cy="425" r="62" class="dark"/>
+  <path d="M410 425l22 22 40-48" stroke="#FFFFFF" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="110" y="560" class="label">Contract administration</text>
+  <text x="110" y="596" class="body">Prepare, sign, submit and monitor.</text>
+
+  <!-- market -->
+  <path d="M700 425h360" class="line"/>
+  <circle cx="735" cy="425" r="28" class="gold"/>
+  <circle cx="875" cy="425" r="28" class="green"/>
+  <circle cx="1025" cy="425" r="28" class="dark"/>
+  <path d="M763 425h80M903 425h92" class="thin"/>
+  <path d="M735 350c-55 0-80 25-80 70h160c0-45-25-70-80-70z" fill="#DDF1E3" stroke="#2F7D4A" stroke-width="6"/>
+  <path d="M875 315l55 35v70H820v-70z" fill="#FFFFFF" stroke="#2F7D4A" stroke-width="6"/>
+  <path d="M1010 330h70v85h-110v-45z" fill="#DDF1E3" stroke="#2F7D4A" stroke-width="6"/>
+  <path d="M1040 330v-45M1015 300h50" class="line"/>
+  <text x="685" y="520" class="label">Harvest and market access</text>
+  <text x="685" y="558" class="body">Aggregation, logistics, buyers,</text>
+  <text x="685" y="586" class="body">off-take and export channels.</text>
+</svg>

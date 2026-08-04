@@ -1,0 +1,34 @@
+.solutions-page { background: #fff; }
+
+.solutions-lede {
+  padding: 8rem 5vw 4rem;
+  color: #171712;
+}
+
+.solutions-lede > p:first-child {
+  margin-bottom: 1.25rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.solutions-lede h1 {
+  max-width: 980px;
+  margin-bottom: 1.5rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.75rem, 5.5vw, 5.75rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 0.96;
+}
+
+.solutions-lede > p:last-child {
+  max-width: 760px;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 450;
+}
+
+@media (max-width: 767px) {
+  .solutions-lede { padding: 7rem 1.5rem 3rem; }
+}

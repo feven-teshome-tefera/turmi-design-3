@@ -1,0 +1,159 @@
+.partner-page {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  color: #171712;
+  background: #f8f8f6;
+}
+
+.partner-intro {
+  z-index: 1;
+  height: auto;
+  min-height: 100svh;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 9rem 3rem 6rem;
+}
+
+.partner-panel {
+  width: 100%;
+  padding: 2.75rem;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.35fr);
+  gap: 2.75rem;
+  background: #fff;
+  box-shadow: 0 20px 65px rgba(23, 57, 41, 0.08);
+}
+
+.partner-eyebrow {
+  margin-bottom: 0;
+  color: #173929;
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.partner-form-wrap {
+  min-height: 570px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  align-items: center;
+  color: #171712;
+  background: #fff;
+  border: 1px solid rgba(23, 57, 41, 0.08);
+  border-radius: 0.25rem;
+  box-shadow: 0 12px 35px rgba(23, 57, 41, 0.11);
+  transform-origin: center top;
+  animation: partner-card-drop 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes partner-card-drop {
+  0% {
+    opacity: 0;
+    transform: translateY(-160px) rotate(-2deg) scale(0.96);
+  }
+  72% {
+    opacity: 1;
+    transform: translateY(8px) rotate(0.4deg) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0) scale(1);
+  }
+}
+
+.partner-form { width: 100%; display: grid; gap: 1rem; }
+.partner-form h2 {
+  margin-bottom: 0.5rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.55rem;
+  letter-spacing: -0.04em;
+}
+
+.partner-form label {
+  display: grid;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.partner-form input,
+.partner-form textarea {
+  width: 100%;
+  padding: 0.7rem 0.75rem;
+  color: inherit;
+  font: 500 1rem/1.4 "Manrope", sans-serif;
+  background: #fff;
+  border: 1px solid rgba(23, 57, 41, 0.16);
+  border-radius: 0.15rem;
+  outline: none;
+  resize: vertical;
+}
+
+.partner-form input:focus,
+.partner-form textarea:focus { border-color: #173929; }
+
+.partner-form button,
+.partner-success button {
+  width: 100%;
+  margin-top: 0.4rem;
+  padding: 1rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  font: 700 0.8rem/1 "Manrope", sans-serif;
+  background: #173929;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.partner-success { width: 100%; text-align: center; }
+.partner-success > span { font-size: 3rem; color: #d9ad56; }
+.partner-success h2 { margin: 1rem 0; font: 500 3.5rem/1 Georgia, serif; }
+.partner-success p { margin-bottom: 2rem; font-size: 1rem; }
+
+.partner-details { min-width: 0; display: grid; grid-template-rows: auto 1fr; gap: 2rem; }
+
+.partner-map {
+  position: relative;
+  min-height: 310px;
+  overflow: hidden;
+  color: #fff;
+  background-color: #203d32;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 38px 38px;
+}
+
+.partner-map::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: radial-gradient(circle at 55% 48%, rgba(217,173,86,.2), transparent 32%);
+}
+
+.partner-map > p { position: absolute; right: 1.25rem; bottom: 1rem; z-index: 2; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; }
+.map-road { position: absolute; width: 130%; height: 80px; border: 2px solid rgba(245,241,232,.16); border-left: 0; border-right: 0; transform: rotate(-13deg); }
+.map-road-one { top: 32%; left: -15%; }
+.map-road-two { top: 55%; left: -10%; transform: rotate(22deg); }
+.map-pin { position: absolute; top: 47%; left: 55%; z-index: 3; width: 34px; height: 34px; display: grid; place-items: center; background: #d9ad56; border-radius: 50% 50% 50% 0; transform: translate(-50%, -50%) rotate(-45deg); animation: map-pin-pulse 1.8s ease-in-out infinite; }
+.map-pin span { width: 9px; height: 9px; background: #173929; border-radius: 50%; }
+@keyframes map-pin-pulse { 50% { transform: translate(-50%, -58%) rotate(-45deg); } }
+
+@media (max-width: 800px) {
+  .partner-intro { padding: 7rem 1.25rem 3rem; }
+  .partner-panel { padding: 1.25rem; grid-template-columns: 1fr; gap: 3rem; }
+  .partner-form-wrap { min-height: auto; padding: 1.5rem; }
+  .partner-details { grid-row: 1; }
+  .partner-map { min-height: 240px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partner-form-wrap { animation: none; }
+  .map-pin { animation: none; }
+}

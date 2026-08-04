@@ -4,6 +4,7 @@ import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 
 import styles from "./MagneticCards.module.css";
+import { useLanguage } from "./LanguageContext";
 
 const CARD_CONTENT = [
   {
@@ -23,8 +24,8 @@ const CARD_CONTENT = [
   },
   {
     number: "04",
-    heading: "Work Offline",
-    description: "Capture data without internet and sync it when reconnected.",
+    heading: "Export",
+    description: "Coordinate harvested goods for buyers, logistics, and export markets.",
   },
 ];
 
@@ -38,6 +39,13 @@ const CURSOR_SMOOTHING = 0.75;
 const ROTATIONS = [5, -5, 7.5, -10];
 
 export default function MagneticCards() {
+  const { isAmharic } = useLanguage();
+  const cardContent = isAmharic ? [
+    { number: "01", heading: "ይመዝግቡ", description: "የገበሬ፣ የእርሻ፣ የሰብልና የወቅት መገለጫዎችን ይፍጠሩ።" },
+    { number: "02", heading: "ያሰፍሩ", description: "እያንዳንዱን የእርሻና የመሬት መዝገብ ከተረጋገጠ ቦታ ጋር ያገናኙ።" },
+    { number: "03", heading: "ይከታተሉ", description: "የመስክ ጉብኝቶችን፣ የሰብል ሂደትን፣ ፎቶዎችንና ወሳኝ ደረጃዎችን ይከታተሉ።" },
+    { number: "04", heading: "ወደ ውጭ ይላኩ", description: "የተሰበሰቡ ምርቶችን ለገዢዎች፣ ለሎጂስቲክስና ለውጭ ገበያ ያስተባብሩ።" },
+  ] : CARD_CONTENT;
   const sectionRef = useRef(null);
   const cardsContainerRef = useRef(null);
   const cardRefs = useRef([]);
@@ -47,7 +55,7 @@ export default function MagneticCards() {
     const cardsContainer = cardsContainerRef.current;
     const cards = cardRefs.current.filter(Boolean);
 
-    if (!section || !cardsContainer || cards.length !== CARD_CONTENT.length) {
+    if (!section || !cardsContainer || cards.length !== cardContent.length) {
       return undefined;
     }
 
@@ -208,7 +216,7 @@ export default function MagneticCards() {
       gsap.ticker.remove(updateCards);
       gsap.set(cards, { clearProps: "transform,zIndex" });
     };
-  }, []);
+  }, [cardContent.length]);
 
   return (
     <section
@@ -217,7 +225,7 @@ export default function MagneticCards() {
       aria-label="Creative process"
     >
       <div ref={cardsContainerRef} className={styles.cards}>
-        {CARD_CONTENT.map((card, index) => (
+        {cardContent.map((card, index) => (
           <article
             className={styles.card}
             key={card.number}

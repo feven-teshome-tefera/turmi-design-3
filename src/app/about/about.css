@@ -1,0 +1,83 @@
+.about-page { color: #171712; background: #f5f1e8; }
+.about-page section { height: auto; }
+
+.about-intro {
+  min-height: 100svh;
+  padding: 9rem 5vw 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.about-eyebrow {
+  margin-bottom: 1.5rem;
+  color: #766b54;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.about-intro h1 {
+  max-width: 1080px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.75rem, 6.5vw, 6.5rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.about-image {
+  width: calc(100% - 10vw);
+  min-height: min(76svh, 760px);
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+}
+
+.about-image img { object-position: center 38%; }
+
+.principles {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 8rem 5vw 10rem;
+  display: grid;
+  grid-template-columns: minmax(240px, 0.75fr) 1.5fr;
+  gap: 8vw;
+}
+
+.principles-heading { position: sticky; top: 8rem; align-self: start; }
+
+.principles-heading h2 {
+  max-width: 420px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.25rem, 4vw, 4rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.02;
+}
+
+.principle {
+  padding: 2rem 0 2.5rem;
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 1rem;
+  border-top: 1px solid rgba(23, 23, 18, 0.22);
+}
+
+.principle > span { padding-top: 0.4rem; color: #8a806b; font-size: 0.75rem; }
+.principle h3 { margin-bottom: 0.65rem; font-size: clamp(1.35rem, 2vw, 1.85rem); letter-spacing: -0.035em; }
+.principle p { max-width: 620px; font-size: clamp(1rem, 1.4vw, 1.2rem); font-weight: 450; }
+
+@media (max-width: 767px) {
+  .about-intro { min-height: 82svh; padding: 8rem 1.5rem 3rem; }
+  .about-image { width: calc(100% - 3rem); min-height: 58svh; }
+  .principles { padding: 5rem 1.5rem 6rem; grid-template-columns: 1fr; gap: 3.5rem; }
+  .principles-heading { position: static; }
+  .principle { grid-template-columns: 2.25rem 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .principles-heading { position: static; }
+}

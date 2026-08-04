@@ -3,14 +3,20 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ReactLenis } from "lenis/react";
 
 import AnimatedCopy from "@/components/AnimatedCopy";
 import MagneticCards from "@/components/MagneticCards";
 import Navbar from "@/components/Navbar";
+import SiteFooter from "@/components/SiteFooter";
+import { useLanguage } from "@/components/LanguageContext";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   const lenisRef = useRef();
+  const { isAmharic } = useLanguage();
 
   useEffect(() => {
     function update(time) {
@@ -37,41 +43,41 @@ export default function Home() {
         <div className="hero-overlay" aria-hidden="true" />
         <div className="hero-container">
           <h1 id="hero-heading" className="hero-heading">
-            <span className="hero-phrase">Finance that moves</span>{" "}
+            <span className="hero-phrase">{isAmharic ? "ከእርሻ ጋር የሚንቀሳቀስ" : "Finance that moves"}</span>{" "}
             <span className="hero-phrase hero-phrase-delayed">
-              when farms do.
+              {isAmharic ? "ፋይናንስ።" : "when farms do."}
             </span>
           </h1>
         </div>
       </section>
-      <section className="about">
+      <section id="about" className="about">
         <div className="header">
-          <h1>From field activity to reliable evidence</h1>
+          <h1>{isAmharic ? "ከመስክ እንቅስቃሴ ወደ አስተማማኝ ማስረጃ" : "From field activity to reliable evidence"}</h1>
         </div>
         <div className="copy">
           <AnimatedCopy>
             <p>
-              Turmi helps field agents register farmers, map farms, collect
+              {isAmharic ? "ቱርሚ የመስክ ወኪሎች ገበሬዎችን እንዲመዘግቡ፣ እርሻዎችን እንዲያሰፍሩ፣ የምርት መረጃ እንዲሰበስቡ እና ከመዝራት እስከ መከር ያለውን ሂደት እንዲያረጋግጡ ይረዳል። እያንዳንዱ የመስክ መዝገብ ለፋይናንስ ተቋማት፣ ለግብርና ድርጅቶች እና ለፕሮግራም አስተዳዳሪዎች በመሬት ላይ የሚካሄደውን ግልጽ እይታ ይሰጣል።" : <>Turmi helps field agents register farmers, map farms, collect
               production data, and verify progress from planting through
               harvest. Every field record gives financial institutions,
               agricultural organizations, and program managers a clearer view
-              of what is happening on the ground.
+              of what is happening on the ground.</>}
             </p>
           </AnimatedCopy>
         </div>
       </section>
       <MagneticCards />
-      <section className="services">
+      <section id="services" className="services">
         <div className="service">
           <div className="col">
             <div className="service-copy">
-              <h3>Farmer and Farm Registration</h3>
+              <h3>{isAmharic ? "የገበሬና የእርሻ ምዝገባ" : "Farmer and Farm Registration"}</h3>
               <AnimatedCopy>
                 <p>
-                  Build reliable farmer profiles and capture accurate farm and
+                  {isAmharic ? "አስተማማኝ የገበሬ መገለጫዎችን ይገንቡ እና ትክክለኛ የእርሻና የመሬት መረጃ በመስክ ላይ ይመዝግቡ። ወኪሎች የሰብል፣ የምርት እና የወቅት ዝርዝሮችን ከሰዎቹና ከቦታዎቹ ጋር በማገናኘት መመዝገብ ይችላሉ።" : <>Build reliable farmer profiles and capture accurate farm and
                   plot information in the field. Agents can record crop,
                   production, and seasonal details while connecting every entry
-                  to the people and locations it represents.
+                  to the people and locations it represents.</>}
                 </p>
               </AnimatedCopy>
             </div>
@@ -80,64 +86,13 @@ export default function Home() {
             <img src="/img_2.jpg" alt="" />
           </div>
         </div>
-        <div className="service">
-          <div className="col">
-            <img src="/img_3.jpg" alt="" />
-          </div>
-          <div className="col">
-            <div className="service-copy">
-              <h3>Field Monitoring and Evidence</h3>
-              <AnimatedCopy>
-                <p>
-                  Record field visits, observations, photographs, and
-                  supporting evidence as work happens. Verified,
-                  location-based records help teams follow planting, input
-                  delivery, crop growth, and harvest milestones with confidence.
-                </p>
-              </AnimatedCopy>
-            </div>
-          </div>
-        </div>
-        <div className="service">
-          <div className="col">
-            <div className="service-copy">
-              <h3>Built for Work in the Field</h3>
-              <AnimatedCopy>
-                <p>
-                  Keep collecting essential information in areas with unreliable
-                  internet. Turmi supports offline data capture and synchronizes
-                  records when connectivity returns, helping agents work quickly
-                  and consistently wherever farms are located.
-                </p>
-              </AnimatedCopy>
-            </div>
-          </div>
-          <div className="col">
-            <img src="/img_4.jpg" alt="" />
-          </div>
-        </div>
-        <div className="service">
-          <div className="col">
-            <img src="/img_5.jpg" alt="" />
-          </div>
-          <div className="col">
-            <div className="service-copy">
-              <h3>Clear Program Visibility</h3>
-              <AnimatedCopy>
-                <p>
-                  Flag risks, delays, and operational problems before they grow.
-                  Supervisors can follow agent activity and program progress,
-                  giving finance and support teams the verified information they
-                  need to coordinate action and reach the right farms.
-                </p>
-              </AnimatedCopy>
-            </div>
-          </div>
-        </div>
       </section>
-      <section className="outro">
-        <h3>Better evidence. Better support for every farm.</h3>
+      <section id="impact" className="outro">
+        <AnimatedCopy scrollStart="top 85%" playOnEnter>
+          <h3>{isAmharic ? "የተሻለ ማስረጃ። ለእያንዳንዱ እርሻ የተሻለ ድጋፍ።" : "Better evidence. Better support for every farm."}</h3>
+        </AnimatedCopy>
       </section>
+      <SiteFooter />
     </>
   );
 }

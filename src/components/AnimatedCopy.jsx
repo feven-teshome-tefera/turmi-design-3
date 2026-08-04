@@ -13,6 +13,11 @@ export default function AnimatedCopy({
   colorInitial = "#dddddd",
   colorAccent = "#abff02",
   colorFinal = "#000000",
+  scrollStart = "top 90%",
+  scrollEnd = "top 10%",
+  playOnEnter = false,
+  playOnMount = false,
+  delay = 0,
 }) {
   const containerRef = useRef(null);
   const splitRefs = useRef([]);
@@ -56,6 +61,33 @@ export default function AnimatedCopy({
 
       gsap.set(allChars, { color: colorInitial });
 
+      if (playOnEnter || playOnMount) {
+        gsap.to(allChars, {
+          keyframes: [
+            { color: colorAccent, duration: 0.08 },
+            { color: colorFinal, duration: 0.12 },
+          ],
+          stagger: 0.025,
+          delay,
+          ...(playOnEnter
+            ? {
+                scrollTrigger: {
+                  trigger: containerRef.current,
+                  start: scrollStart,
+                  once: true,
+                },
+              }
+            : {}),
+        });
+
+        return () => {
+          splitRefs.current.forEach(({ wordSplit, charSplit }) => {
+            if (charSplit) charSplit.revert();
+            if (wordSplit) wordSplit.revert();
+          });
+        };
+      }
+
       const scheduleFinalTransition = (char, index) => {
         if (colorTransitionTimers.current.has(index)) {
           clearTimeout(colorTransitionTimers.current.get(index));
@@ -80,8 +112,8 @@ export default function AnimatedCopy({
 
       ScrollTrigger.create({
         trigger: containerRef.current,
-        start: "top 90%",
-        end: "top 10%",
+        start: scrollStart,
+        end: scrollEnd,
         scrub: 1,
         onUpdate: (self) => {
           const progress = self.progress;
@@ -131,7 +163,7 @@ export default function AnimatedCopy({
     },
     {
       scope: containerRef,
-      dependencies: [colorInitial, colorAccent, colorFinal],
+      dependencies: [colorInitial, colorAccent, colorFinal, scrollStart, scrollEnd, playOnEnter, playOnMount, delay],
     }
   );
 
