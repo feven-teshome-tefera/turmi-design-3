@@ -52,15 +52,18 @@ export default function Home() {
       </section>
       <section id="about" className="about">
         <div className="header">
-          <h1>{isAmharic ? "የግብርና እሴት ሰንሰለት የሥራና የፋይናንስ ንብርብር" : "The operating and financing layer of the agricultural value chain."}</h1>
+          <h1>{isAmharic ? "የግብርና እሴት ሰንሰለት የሥራና የፋይናንስ ንብርብር" : "Financing agriculture from the ground up — literally."}</h1>
         </div>
         <div className="copy">
           <AnimatedCopy>
             <p>
-              {isAmharic ? "ቱርሚ ካፒታልን፣ የግብርና ሥራዎችን፣ የተረጋገጠ የመስክ አፈጻጸምንና የገበያ ተደራሽነትን በአንድ የተቀናጀ ሞዴል ያገናኛል። ፋይናንስን በእውነተኛ የምርት ፍላጎቶች ላይ በማዋል ከመስክ እስከ መከርና ክፍያ ድረስ አፈጻጸምን ይከታተላል።" : <>Turmi connects capital, agricultural operations, verified field
-              performance, and market access in one vertically integrated model.
-              We deploy financing against real production needs and track execution
-              from the field through harvest and repayment.</>}
+              {isAmharic ? "ቱርሚ ካፒታልን፣ የግብርና ሥራዎችን፣ የተረጋገጠ የመስክ አፈጻጸምንና የገበያ ተደራሽነትን በአንድ የተቀናጀ ሞዴል ያገናኛል። ፋይናንስን በእውነተኛ የምርት ፍላጎቶች ላይ በማዋል ከመስክ እስከ መከርና ክፍያ ድረስ አፈጻጸምን ይከታተላል።" : <>Turmi is an agricultural financial technologies company. We combine
+              field operations with geospatial technology to unlock capital for feed
+              producers and ranchers. Financing is gated to verified, on-the-ground
+              performance: capital is released in tranches as satellite imagery and
+              ground sensors confirm real progress. Backed by export receipts, our
+              model aligns lenders, producers, and buyers around a single source of
+              truth — the land itself.</>}
             </p>
           </AnimatedCopy>
         </div>

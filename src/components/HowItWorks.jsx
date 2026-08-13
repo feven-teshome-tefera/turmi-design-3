@@ -58,23 +58,40 @@ export default function HowItWorks() {
     let tween;
     let lenis;
     let frameId;
+    let updateScrollTrigger;
+    let updateLenis;
     let cancelled = false;
     const reducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
     const pathLength = path.getTotalLength();
+    const images = Array.from(spotlight.querySelectorAll("img"));
+    const waitForImage = (image) =>
+      image?.complete
+        ? Promise.resolve()
+        : new Promise((resolve) => {
+            image?.addEventListener("load", resolve, { once: true });
+            image?.addEventListener("error", resolve, { once: true });
+          });
 
     gsap.set(path, {
+      opacity: 0,
       strokeDasharray: pathLength,
       strokeDashoffset: reducedMotion ? 0 : pathLength,
     });
 
-    if (!reducedMotion) {
+    const startAnimation = () => {
+      if (cancelled) return;
+
+      gsap.set(path, { opacity: 1 });
+
+      if (reducedMotion) return;
+
       gsap.registerPlugin(ScrollTrigger);
 
       lenis = new Lenis({ autoRaf: false });
-      const updateScrollTrigger = () => ScrollTrigger.update();
-      const updateLenis = (time) => lenis?.raf(time * 1000);
+      updateScrollTrigger = () => ScrollTrigger.update();
+      updateLenis = (time) => lenis?.raf(time * 1000);
 
       lenis.on("scroll", updateScrollTrigger);
       gsap.ticker.add(updateLenis);
@@ -92,16 +109,13 @@ export default function HowItWorks() {
         });
       }, spotlight);
 
-      const imagesReady = Promise.all(
-        Array.from(spotlight.querySelectorAll("img"), (image) =>
-          image.complete
-            ? Promise.resolve()
-            : new Promise((resolve) => {
-                image.addEventListener("load", resolve, { once: true });
-                image.addEventListener("error", resolve, { once: true });
-              })
-        )
-      );
+      ScrollTrigger.refresh();
+    };
+
+    waitForImage(images[0]).then(startAnimation);
+
+    if (!reducedMotion) {
+      const imagesReady = Promise.all(images.map(waitForImage));
       const fontsReady = document.fonts?.ready ?? Promise.resolve();
 
       Promise.all([imagesReady, fontsReady]).then(() => {
@@ -115,15 +129,15 @@ export default function HowItWorks() {
         tween?.scrollTrigger?.kill();
         tween?.kill();
         context?.revert();
-        lenis.off("scroll", updateScrollTrigger);
-        gsap.ticker.remove(updateLenis);
-        lenis.destroy();
+        if (lenis && updateScrollTrigger) lenis.off("scroll", updateScrollTrigger);
+        if (updateLenis) gsap.ticker.remove(updateLenis);
+        lenis?.destroy();
       };
     }
 
     return () => {
       cancelled = true;
-      gsap.set(path, { clearProps: "strokeDasharray,strokeDashoffset" });
+      gsap.set(path, { clearProps: "opacity,strokeDasharray,strokeDashoffset" });
     };
   }, []);
 
