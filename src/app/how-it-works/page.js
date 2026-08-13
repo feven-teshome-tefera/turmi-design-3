@@ -5,7 +5,7 @@ import SiteFooter from "@/components/SiteFooter";
 export const metadata = {
   title: "How Turmi Works",
   description:
-    "Follow Turmi's process from farmer registration through market access.",
+    "Follow Turmi from producer onboarding and financing through verified production, market access, and repayment.",
 };
 
 export default function HowItWorksPage() {

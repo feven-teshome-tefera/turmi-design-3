@@ -12,11 +12,11 @@ import { useLanguage } from "@/components/LanguageContext";
 import "./about.css";
 
 const principles = [
-  ["Evidence before capital", "Financing decisions should be informed by verified production information."],
-  ["Operational accountability", "Inputs, services and activities should be connected to farms, plots and contracts."],
-  ["Role-appropriate access", "Users should receive the information and permissions required for their responsibilities."],
-  ["Farmer participation", "Farmer identity, consent, production records and contractual participation should be represented clearly."],
-  ["Responsible growth", "New regions, commodities and financing channels should be added without weakening operational discipline."],
+  ["Evidence over assumptions", "Financing and operational decisions should be informed by verified production information."],
+  ["Capital with accountability", "Financing should remain connected to the activities and productive assets it supports."],
+  ["Execution before speculation", "Real agricultural work and agreed milestones provide the basis for subsequent action."],
+  ["Producers as partners", "Producer identity, consent, plans, and participation should be represented clearly."],
+  ["Markets connected to production", "Harvest, logistics, buyers, receivables, and repayment should form a defined path."],
 ];
 
 export default function AboutPage() {
@@ -46,9 +46,9 @@ export default function AboutPage() {
         <section className="about-intro" aria-labelledby="about-heading">
           <p className="about-eyebrow">{isAmharic ? "ስለ ቱርሚ" : "About Turmi"}</p>
           <h1 id="about-heading">
-            <span>{isAmharic ? "በእርሻ ላይ በሚከናወነውና " : "A clearer connection between what happens on the farm "}</span>
+            <span>{isAmharic ? "የግብርና እሴት ሰንሰለት " : "The operating and financing layer "}</span>
             <AnimatedCopy scrollStart="top 75%" playOnEnter>
-              <span>{isAmharic ? "በዙሪያው በሚወሰኑ ውሳኔዎች መካከል ግልጽ ግንኙነት።" : "and the decisions made around it."}</span>
+              <span>{isAmharic ? "የሥራና የፋይናንስ ንብርብር።" : "of the agricultural value chain."}</span>
             </AnimatedCopy>
           </h1>
         </section>
@@ -60,7 +60,7 @@ export default function AboutPage() {
         <section className="principles" aria-labelledby="principles-heading">
           <div className="principles-heading">
             <p className="about-eyebrow">{isAmharic ? "እንዴት እንደምንሠራ" : "How we work"}</p>
-            <h2 id="principles-heading">{isAmharic ? "መድረኩን የሚመሩ መርሆዎች" : "Principles guiding the platform"}</h2>
+            <h2 id="principles-heading">{isAmharic ? "ሥራችንን የሚመሩ እሴቶች" : "Values guiding our work"}</h2>
           </div>
           <div className="principles-list">
             {localizedPrinciples.map(([title, copy], index) => (

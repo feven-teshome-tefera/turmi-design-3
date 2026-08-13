@@ -9,7 +9,7 @@ export default function SiteFooter() {
     <footer id="partner" className="site-footer">
       <div className="footer-main">
         <p className="footer-summary">
-          {isAmharic ? "ለጠንካራ የግብርና ድጋፍ አስተማማኝ የመስክ መረጃ።" : "Reliable field data for stronger agricultural support."}
+          {isAmharic ? "ከምርት ጋር የሚንቀሳቀስ ፋይናንስ።" : "Finance that moves when production does."}
         </p>
         <nav className="footer-links" aria-label="Footer navigation">
           <Link href="/about">{isAmharic ? "ስለ እኛ" : "About"}</Link>
@@ -20,7 +20,7 @@ export default function SiteFooter() {
       </div>
       <div className="footer-bottom">
         <p>&copy; 2026 Turmi. {isAmharic ? "መብቱ በሕግ የተጠበቀ ነው።" : "All rights reserved."}</p>
-        <p>{isAmharic ? "ለእያንዳንዱ መስክ የተገነባ።" : "Built for every field."}</p>
+        <p>{isAmharic ? "ካፒታል → ምርት → ማረጋገጫ → ገበያ → ክፍያ" : "Capital → Production → Verification → Market → Repayment"}</p>
       </div>
     </footer>
   );

@@ -6,52 +6,51 @@ import { useLanguage } from "./LanguageContext";
 
 const solutions = [
   {
-    title: "For banks, MFIs and DFIs",
-    copy: "Turmi provides structured operational records that can support agricultural portfolio oversight and financing decisions.",
+    title: "Production Financing",
+    copy: "Working capital for agricultural production cycles, deployed according to defined production plans and verified execution milestones.",
     features: [
-      "Farmer, farm and plot-level records",
-      "Production and activity visibility",
-      "Plot-level financing requirements",
-      "Oracle-supported milestone evidence",
-      "Role-based access for reviewers",
-      "Contract and portfolio information",
+      "Land preparation and inputs",
+      "Cultivation and agricultural services",
+      "Livestock operations",
+      "Harvesting requirements",
+      "Defined production plans",
+      "Progressive capital deployment",
     ],
   },
   {
-    title: "For Managed Services Entities",
-    copy: "Turmi helps MSEs coordinate the operational work required to deploy financing through inputs, services and infrastructure.",
+    title: "Equipment & Infrastructure Financing",
+    copy: "Longer-term financing connected to the productive use and expected economic output of agricultural assets.",
     features: [
-      "Farmer onboarding",
-      "Procurement coordination",
-      "Input and service delivery",
-      "Field-agent workflows",
-      "Contract-farming administration",
-      "Agricultural portfolio management",
-      "Harvest and logistics coordination",
+      "Irrigation systems",
+      "Machinery and equipment",
+      "Storage infrastructure",
+      "Processing infrastructure",
+      "Ranch operations",
+      "Productive capacity",
     ],
   },
   {
-    title: "For exporters and off-takers",
-    copy: "Turmi helps market partners gain greater visibility into contracted production and harvest coordination.",
+    title: "Producers & Agricultural Partners",
+    copy: "Access structured financing, productive assets, operational support, and participation across the production cycle.",
     features: [
-      "Contracted farm and plot records",
-      "Production-status visibility",
-      "Harvest-readiness information",
-      "Aggregation support",
-      "Logistics coordination",
-      "Buyer and off-take workflow visibility",
+      "Producer onboarding",
+      "Input delivery",
+      "Field services",
+      "Equipment and verification",
+      "Logistics and processing",
+      "Connections to markets",
     ],
   },
   {
-    title: "For government and development partners",
-    copy: "Turmi provides operational infrastructure for agricultural programs requiring structured field records, managed-service workflows and measurable implementation.",
+    title: "Financial Institutions, Buyers & Exporters",
+    copy: "Participate in agricultural financing and connect with organized production with greater visibility into requirements, execution, and outcomes.",
     features: [
-      "Farmer-program registration",
-      "Plot mapping",
-      "Service-delivery records",
-      "Field monitoring",
-      "Production verification",
-      "Program-level operational visibility",
+      "Production requirements",
+      "Execution visibility",
+      "Verified milestones",
+      "Organized supply",
+      "Harvest coordination",
+      "Market and repayment pathways",
     ],
   },
 ];
@@ -70,7 +69,7 @@ export default function SolutionStack() {
         <article className={styles.solution} key={solution.title}>
           <div className={styles.marker}>
             <span className={styles.number}>{String(index + 1).padStart(2, "0")}</span>
-            <p className={styles.label}>{isAmharic ? "ማንን ይደግፋል" : "Who it supports"}</p>
+            <p className={styles.label}>{isAmharic ? "ፋይናንስና አጋሮች" : "Finance & partners"}</p>
           </div>
           <div className={styles.copy}>
             <AnimatedCopy

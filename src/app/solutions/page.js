@@ -36,8 +36,8 @@ export default function SolutionsPage() {
             playOnEnter
           >
             <h1>
-              <span>{isAmharic ? "ለግብርና ፋይናንስ " : "Operational infrastructure for "}</span>
-              <span>{isAmharic ? "የሥራ መሠረተ ልማት" : "agricultural financing"}</span>
+              <span>{isAmharic ? "በግብርና ምርት ዙሪያ " : "Financing designed around "}</span>
+              <span>{isAmharic ? "የተነደፈ ፋይናንስ" : "agricultural production."}</span>
             </h1>
           </AnimatedCopy>
           <AnimatedCopy
@@ -48,8 +48,8 @@ export default function SolutionsPage() {
             playOnEnter
           >
             <p>
-              <span>{isAmharic ? "ቱርሚ የግብርና ምርትን በፋይናንስ፣ በሥራ አመራር፣ " : "Turmi supports organizations responsible for financing, operating, "}</span>
-              <span>{isAmharic ? "በክትትልና በግዥ የሚደግፉ ድርጅቶችን ይደግፋል።" : "monitoring and purchasing agricultural production."}</span>
+              <span>{isAmharic ? "ቱርሚ ካፒታልን እንደ አንድ ያልተከፋፈለ ብድር ሳይመለከት " : "Turmi structures capital around identifiable production requirements "}</span>
+              <span>{isAmharic ? "በሚታወቁ የምርት ፍላጎቶችና አምራች ንብረቶች ዙሪያ ያዋቅራል።" : "and productive assets rather than a single undifferentiated loan."}</span>
             </p>
           </AnimatedCopy>
         </div>

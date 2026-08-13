@@ -9,23 +9,23 @@ import { useLanguage } from "./LanguageContext";
 const CARD_CONTENT = [
   {
     number: "01",
-    heading: "Register",
-    description: "Create farmer profiles with farm, crop, and seasonal details.",
+    heading: "Structure",
+    description: "Register producers, map farms, and define production requirements.",
   },
   {
     number: "02",
-    heading: "Map",
-    description: "Link every farm and plot record to its verified location.",
+    heading: "Finance",
+    description: "Connect financing to specific agricultural activities and assets.",
   },
   {
     number: "03",
-    heading: "Monitor",
-    description: "Track field visits, crop progress, photos, and milestones.",
+    heading: "Execute & Verify",
+    description: "Coordinate inputs and services, then verify agreed milestones.",
   },
   {
     number: "04",
-    heading: "Export",
-    description: "Coordinate harvested goods for buyers, logistics, and export markets.",
+    heading: "Market & Repay",
+    description: "Coordinate harvest, buyers, logistics, receivables, and repayment.",
   },
 ];
 
@@ -107,6 +107,14 @@ export default function MagneticCards() {
         velocityRotation: 0,
       };
     });
+
+    const mobileQuery = window.matchMedia("(max-width: 767px)");
+
+    if (mobileQuery.matches) {
+      return () => {
+        gsap.set(cards, { clearProps: "transform,zIndex" });
+      };
+    }
 
     const handleMouseMove = (event) => {
       cursor.vx =
@@ -222,7 +230,7 @@ export default function MagneticCards() {
     <section
       ref={sectionRef}
       className={styles.spotlight}
-      aria-label="Creative process"
+      aria-label="One system from capital to market"
     >
       <div ref={cardsContainerRef} className={styles.cards}>
         {cardContent.map((card, index) => (

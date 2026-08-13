@@ -43,25 +43,24 @@ export default function Home() {
         <div className="hero-overlay" aria-hidden="true" />
         <div className="hero-container">
           <h1 id="hero-heading" className="hero-heading">
-            <span className="hero-phrase">{isAmharic ? "ከእርሻ ጋር የሚንቀሳቀስ" : "Finance that moves"}</span>{" "}
+            <span className="hero-phrase">{isAmharic ? "በእውነተኛ ምርት ዙሪያ የተገነባ" : "Agricultural finance built"}</span>{" "}
             <span className="hero-phrase hero-phrase-delayed">
-              {isAmharic ? "ፋይናንስ።" : "when farms do."}
+              {isAmharic ? "የግብርና ፋይናንስ።" : "around real production."}
             </span>
           </h1>
         </div>
       </section>
       <section id="about" className="about">
         <div className="header">
-          <h1>{isAmharic ? "ከመስክ እንቅስቃሴ ወደ አስተማማኝ ማስረጃ" : "From field activity to reliable evidence"}</h1>
+          <h1>{isAmharic ? "የግብርና እሴት ሰንሰለት የሥራና የፋይናንስ ንብርብር" : "The operating and financing layer of the agricultural value chain."}</h1>
         </div>
         <div className="copy">
           <AnimatedCopy>
             <p>
-              {isAmharic ? "ቱርሚ የመስክ ወኪሎች ገበሬዎችን እንዲመዘግቡ፣ እርሻዎችን እንዲያሰፍሩ፣ የምርት መረጃ እንዲሰበስቡ እና ከመዝራት እስከ መከር ያለውን ሂደት እንዲያረጋግጡ ይረዳል። እያንዳንዱ የመስክ መዝገብ ለፋይናንስ ተቋማት፣ ለግብርና ድርጅቶች እና ለፕሮግራም አስተዳዳሪዎች በመሬት ላይ የሚካሄደውን ግልጽ እይታ ይሰጣል።" : <>Turmi helps field agents register farmers, map farms, collect
-              production data, and verify progress from planting through
-              harvest. Every field record gives financial institutions,
-              agricultural organizations, and program managers a clearer view
-              of what is happening on the ground.</>}
+              {isAmharic ? "ቱርሚ ካፒታልን፣ የግብርና ሥራዎችን፣ የተረጋገጠ የመስክ አፈጻጸምንና የገበያ ተደራሽነትን በአንድ የተቀናጀ ሞዴል ያገናኛል። ፋይናንስን በእውነተኛ የምርት ፍላጎቶች ላይ በማዋል ከመስክ እስከ መከርና ክፍያ ድረስ አፈጻጸምን ይከታተላል።" : <>Turmi connects capital, agricultural operations, verified field
+              performance, and market access in one vertically integrated model.
+              We deploy financing against real production needs and track execution
+              from the field through harvest and repayment.</>}
             </p>
           </AnimatedCopy>
         </div>
@@ -71,13 +70,13 @@ export default function Home() {
         <div className="service">
           <div className="col">
             <div className="service-copy">
-              <h3>{isAmharic ? "የገበሬና የእርሻ ምዝገባ" : "Farmer and Farm Registration"}</h3>
+              <h3>{isAmharic ? "በሚረጋገጥ ማስረጃ የተደገፉ ሥራዎች" : "Operations backed by verifiable evidence."}</h3>
               <AnimatedCopy>
                 <p>
-                  {isAmharic ? "አስተማማኝ የገበሬ መገለጫዎችን ይገንቡ እና ትክክለኛ የእርሻና የመሬት መረጃ በመስክ ላይ ይመዝግቡ። ወኪሎች የሰብል፣ የምርት እና የወቅት ዝርዝሮችን ከሰዎቹና ከቦታዎቹ ጋር በማገናኘት መመዝገብ ይችላሉ።" : <>Build reliable farmer profiles and capture accurate farm and
-                  plot information in the field. Agents can record crop,
-                  production, and seasonal details while connecting every entry
-                  to the people and locations it represents.</>}
+                  {isAmharic ? "ቱርሚ የመስክና የጂኦስፓሻል ማስረጃን በመጠቀም የግብርና እንቅስቃሴን ይረዳል፣ የተስማሙ ደረጃዎችን ያረጋግጣል፣ እና በምርት ዑደቱ ሁሉ የፋይናንስና የሥራ ውሳኔዎችን ይደግፋል።" : <>Turmi uses field and geospatial evidence to understand agricultural
+                  activity, verify agreed milestones, and support financing and
+                  operational decisions throughout the production cycle.
+                  Verification connects capital deployment to real execution.</>}
                 </p>
               </AnimatedCopy>
             </div>
@@ -89,7 +88,7 @@ export default function Home() {
       </section>
       <section id="impact" className="outro">
         <AnimatedCopy scrollStart="top 85%" playOnEnter>
-          <h3>{isAmharic ? "የተሻለ ማስረጃ። ለእያንዳንዱ እርሻ የተሻለ ድጋፍ።" : "Better evidence. Better support for every farm."}</h3>
+          <h3>{isAmharic ? "የግብርና ምርትን በተሻለ የተገናኘ ካፒታል ዙሪያ ይገንቡ።" : "Build agricultural production around better-connected capital."}</h3>
         </AnimatedCopy>
       </section>
       <SiteFooter />

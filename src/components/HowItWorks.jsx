@@ -11,20 +11,20 @@ import { useLanguage } from "./LanguageContext";
 
 const illustrations = [
   {
-    src: "/images/how-it-works/img_1.svg",
-    alt: "Turmi field-agent onboarding and satellite-supported farm mapping",
+    src: "/images/how-it-works/01-ground-truth.svg",
+    alt: "Field agents and ground sensors collecting verified agricultural ground truth",
   },
   {
-    src: "/images/how-it-works/img_2.svg",
-    alt: "Plot-level financing requirements and agricultural service delivery",
+    src: "/images/how-it-works/02-model-training.svg",
+    alt: "Verified ground truth training Turmi's geospatial classification models",
   },
   {
-    src: "/images/how-it-works/img_3.svg",
-    alt: "Field activity records and satellite-based production verification",
+    src: "/images/how-it-works/03-gated-capital.svg",
+    alt: "Satellite and sensor evidence confirming performance and gating capital",
   },
   {
-    src: "/images/how-it-works/img_4.svg",
-    alt: "Contract administration, harvest coordination and market access",
+    src: "/images/how-it-works/04-risk-profile.svg",
+    alt: "Improving risk profiles through better data and optimized capital allocation",
   },
 ];
 
@@ -140,22 +140,16 @@ export default function HowItWorks() {
       <div className={styles.row}>
         <div className={styles.column}>
           <article className={styles.card}>
-            <h1>{isAmharic ? "ከገበሬ ምዝገባ እስከ ግብዓት አቅርቦት" : "From farmer registration to in-kind delivery"}</h1>
+            <h1>{isAmharic ? "ክብ የመረጃ ሥርዓት።" : "A circular intelligence system."}</h1>
             <p>
-              {isAmharic ? <><strong>ደረጃ 1 — ይመዝግቡ።</strong> የገበሬ ማንነት፣ ፈቃድና የእርሻ መዝገብ ይያዙ።<br /><br /><strong>ደረጃ 2 — ያሰፍሩ።</strong> የመሬት ወሰን፣ ሰብልና የምርት ዝርዝር ያረጋግጡ።<br /><br /><strong>ደረጃ 3 — ያቅዱ።</strong> የእያንዳንዱን መሬት ግብዓት፣ አገልግሎትና የፋይናንስ ፍላጎት ይወስኑ።<br /><br /><strong>ደረጃ 4 — ያቅርቡ።</strong> የተፈቀዱ ግብዓቶችንና አገልግሎቶችን ያቅርቡ።</> : <><strong>Phase 1 — Register.</strong> Capture farmer KYC, consent
-              and farm records.
+              {isAmharic ? <>እያንዳንዱ የፋይናንስ ዑደት ቀጣዩን ይበልጥ ብልህ ያደርገዋል። ከመሬት የሚገኘው እውነተኛ መረጃ ሞዴሎቻችንን ያሰለጥናል፤ ሞዴሎቻችንም የካፒታል ምደባችንን ያሻሽላሉ።<br /><br /><strong>ወኪሎች እውነተኛ የመስክ መረጃ ይሰበስባሉ።</strong> የመስክ ወኪሎችና ሴንሰሮች ስለ አፈር፣ የመኖ ሰብሎች፣ መንጋዎችና ሥራዎች የተረጋገጠ መረጃ ይሰበስባሉ።</> : <>Every financing cycle makes the next one smarter. Ground truth feeds our
+              models; our models sharpen our capital allocation.
               <br />
               <br />
-              <strong>Phase 2 — Map.</strong> Confirm plot boundaries, crops and
-              production details.
+              <strong>Agents collect ground truth</strong>
               <br />
-              <br />
-              <strong>Phase 3 — Plan.</strong> Define each plot&apos;s inputs,
-              services and financing needs.
-              <br />
-              <br />
-              <strong>Phase 4 — Deliver.</strong> Provide approved inputs and
-              services in-kind.</>}
+              Field agents and ground sensors capture verified data on soil, feed
+              crops, herds, and operations.</>}
             </p>
           </article>
         </div>
@@ -170,22 +164,22 @@ export default function HowItWorks() {
         </div>
         <div className={styles.column}>
           <article className={styles.card}>
-            <h2>{isAmharic ? "ከመስክ ማረጋገጫ እስከ ገበያ ተደራሽነት" : "From field verification to market access"}</h2>
+            <h2>{isAmharic ? "መረጃ ሞዴሎቻችንን ያሻሽላል።" : "Data trains our models"}</h2>
             <p>
-              {isAmharic ? <><strong>ደረጃ 5 — ይመዝግቡ።</strong> የመስክ እንቅስቃሴና የምርት ሂደት ይከታተሉ።<br /><br /><strong>ደረጃ 6 — ያረጋግጡ።</strong> የሳተላይት መረጃን ከመስክ ምልከታ ጋር ያጣምሩ።<br /><br /><strong>ደረጃ 7 — ውል ያድርጉ።</strong> የእርሻ ስምምነቶችን ያዘጋጁ፣ ያጽድቁና ይከታተሉ።<br /><br /><strong>ደረጃ 8 — ያገናኙ።</strong> መከርን፣ ሎጂስቲክስንና የገበያ ተደራሽነትን ያስተባብሩ።</> : <><strong>Phase 5 — Record.</strong> Track field activities and
-              production progress.
+              {isAmharic ? <>እውነተኛ የመስክ መረጃ የጂኦስፓሻል ምደባ ሞዴሎቻችንን ያሻሽላል — የተሳለ ማወቂያና የተሻሉ ትንበያዎች።<br /><br /><strong>ሞዴሎች ካፒታልን ይቆጣጠራሉ።</strong> የሳተላይትና የሴንሰር ማስረጃ እውነተኛ አፈጻጸምን ሲያረጋግጥ የፋይናንስ ክፍሎች በራስ-ሰር ይለቀቃሉ።<br /><br /><strong>የአደጋ መገለጫዎች ይሻሻላሉ።</strong> የተሻለ መረጃ የተመቻቸ የካፒታል ምደባን፣ ፍትሃዊ ዋጋንና ዝቅተኛ አደጋን ለሁሉም ያመጣል።</> : <>Ground truth improves our geospatial classification models — sharper
+              detection, better predictions.
               <br />
               <br />
-              <strong>Phase 6 — Verify.</strong> Combine satellite data with
-              field observations.
+              <strong>Models gate capital</strong>
+              <br />
+              Tranches release automatically when satellite and sensor evidence
+              confirms real performance.
               <br />
               <br />
-              <strong>Phase 7 — Contract.</strong> Prepare, approve and monitor
-              farming agreements.
+              <strong>Risk profiles improve</strong>
               <br />
-              <br />
-              <strong>Phase 8 — Connect.</strong> Coordinate harvest, logistics
-              and market access.</>}
+              Better data means optimized capital allocation, fairer pricing, and
+              lower risk — for everyone in the loop.</>}
             </p>
           </article>
         </div>

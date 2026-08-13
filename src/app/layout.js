@@ -2,8 +2,8 @@ import "./globals.css";
 import { LanguageProvider } from "@/components/LanguageContext";
 
 export const metadata = {
-  title: "Terminal Text Scroll Animation | Codegrid",
-  description: "Terminal Text Scroll Animation | Codegrid",
+  title: "Turmi | Agricultural Finance Built Around Real Production",
+  description: "Turmi connects agricultural finance, field execution, verification, market access, and repayment.",
 };
 
 export default function RootLayout({ children }) {
