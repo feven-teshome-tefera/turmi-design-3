@@ -22,6 +22,22 @@ export default function PartnerPage() {
       <main className="partner-page">
         <section className="partner-intro" aria-labelledby="partner-heading">
           <div className="partner-panel">
+            <div className="partner-details">
+              <p className="partner-kicker">{isAmharic ? "ከቱርሚ ጋር ይተባበሩ" : "Partner with Turmi"}</p>
+              <h1 id="partner-heading">
+                {isAmharic ? "ከእርስዎ መስማት እንፈልጋለን።" : "We’d love to hear from you."}
+              </h1>
+              <p className="partner-description">
+                {isAmharic
+                  ? "ፋይናንስን ከእውነተኛ የግብርና ምርት ጋር ለማገናኘት ከአምራቾች፣ ከፋይናንስ ተቋማት፣ ከገዢዎችና ከግብርና አጋሮች ጋር እንሰራለን።"
+                  : "We work with producers, financial institutions, buyers, and agricultural partners to connect capital with real production."}
+              </p>
+              <div className="partner-orbits" aria-hidden="true">
+                <span /><span /><span />
+              </div>
+              <p className="partner-location">{isAmharic ? "ኢትዮጵያ · አፍሪካ" : "Ethiopia · Africa"}</p>
+            </div>
+
             <div className="partner-form-wrap">
               {submitted ? (
                 <div className="partner-success" role="status">
@@ -32,28 +48,21 @@ export default function PartnerPage() {
                 </div>
               ) : (
                 <form className="partner-form" onSubmit={handleSubmit}>
-                  <h2>{isAmharic ? "ያግኙን" : "Get in touch"}</h2>
-                  <label>{isAmharic ? "ስም" : "Name"}<input name="name" type="text" autoComplete="name" required /></label>
-                  <label>{isAmharic ? "የሥራ ኢሜይል" : "Work email"}<input name="email" type="email" autoComplete="email" required /></label>
-                  <label>{isAmharic ? "ድርጅት" : "Organization"}<input name="organization" type="text" autoComplete="organization" required /></label>
-                  <label>{isAmharic ? "ከቱርሚ ጋር እንዴት መሥራት ይፈልጋሉ?" : "How would you like to work with Turmi?"}<textarea name="message" rows="4" required /></label>
-                  <button type="submit">{isAmharic ? "ውይይት ይጀምሩ" : "Start a conversation"} <span aria-hidden="true">↗</span></button>
+                  <p className="partner-kicker">{isAmharic ? "ውይይት ይጀምሩ" : "Start a conversation"}</p>
+                  <h2>{isAmharic ? "ያግኙን" : "Contact us"}</h2>
+                  <div className="partner-fields">
+                    <label>{isAmharic ? "ስም" : "First name"}<input name="firstName" type="text" autoComplete="given-name" placeholder={isAmharic ? "ስምዎ" : "Enter your first name"} required /></label>
+                    <label>{isAmharic ? "የአባት ስም" : "Last name"}<input name="lastName" type="text" autoComplete="family-name" placeholder={isAmharic ? "የአባት ስምዎ" : "Enter your last name"} required /></label>
+                    <label>{isAmharic ? "የሥራ ኢሜይል" : "Work email"}<input name="email" type="email" autoComplete="email" placeholder={isAmharic ? "ኢሜይልዎ" : "Enter your email"} required /></label>
+                  </div>
+                  <label>{isAmharic ? "መልዕክት" : "Message"}<textarea name="message" rows="3" placeholder={isAmharic ? "መልዕክትዎን ይጻፉ" : "Enter your message"} required /></label>
+                  <button type="submit">{isAmharic ? "ይላኩ" : "Submit"} <span aria-hidden="true">↗</span></button>
+                  <div className="partner-email">
+                    <span>{isAmharic ? "ኢሜይል" : "Email us"}</span>
+                    <a href="mailto:hello@turmi.co">hello@turmi.co</a>
+                  </div>
                 </form>
               )}
-            </div>
-
-            <div className="partner-details">
-              <div className="partner-copy">
-                <h1 id="partner-heading" className="partner-eyebrow">
-                  {isAmharic ? "ከእኛ ጋር ይተባበሩ" : "Partner with us"}
-                </h1>
-              </div>
-              <div className="partner-map" aria-label={isAmharic ? "የቱርሚ የሥራ ክልል" : "Turmi operating region"}>
-                <div className="map-road map-road-one" aria-hidden="true" />
-                <div className="map-road map-road-two" aria-hidden="true" />
-                <div className="map-pin" aria-hidden="true"><span /></div>
-                <p>{isAmharic ? "ኢትዮጵያ · አፍሪካ" : "Ethiopia · Africa"}</p>
-              </div>
             </div>
           </div>
         </section>
