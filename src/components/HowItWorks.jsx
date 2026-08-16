@@ -11,19 +11,19 @@ import { useLanguage } from "./LanguageContext";
 
 const illustrations = [
   {
-    src: "/images/how-it-works/01-ground-truth.svg",
+    src: "/images/how-it-works/coDeEGtveCAidVIxKj344eJq-MDtcgMvSYFmvW99y9FqNPGDEzn9P51wIOxejhIXYX9-gx5l7_ZY9SvGc9Dc8g5CkaNwzz0jNrvuSdMzdvrNFjMnJtBVYdLhuA3gWNTjagbxl7CMwZt5NVVeLGPIXH5jdgmEqBuw7PqousS2EghEJ1SqqAIc267p5BAUUZiw.jpeg",
     alt: "Field agents and ground sensors collecting verified agricultural ground truth",
   },
   {
-    src: "/images/how-it-works/02-model-training.svg",
+    src: "/images/how-it-works/484185936_1265446404938137_6265662690372974928_n.jpg",
     alt: "Verified ground truth training Turmi's geospatial classification models",
   },
   {
-    src: "/images/how-it-works/03-gated-capital.svg",
+    src: "/images/how-it-works/DR4b6hfHkXfcxYNX3hc7j1bTt1yhWjrZrc3wKN3lWSUnpJ_A6_fppumRAuohhY0EsXBfZ7xCCcJpqBS0blOi143eALxLjQ0aH22K53RfrWiUAxyecG2SB1lwzoGrpQxhiOHQhKjOKSAvPrsxmqy7eDlnR3_VCF7vZQ8Ebu5WgB9yScUHunxkvzGeqMlSbw1_.jpeg",
     alt: "Satellite and sensor evidence confirming performance and gating capital",
   },
   {
-    src: "/images/how-it-works/04-risk-profile.svg",
+    src: "/images/how-it-works/harvesting-wheat-crop-stockcake.jpg",
     alt: "Improving risk profiles through better data and optimized capital allocation",
   },
 ];
@@ -32,7 +32,9 @@ function Illustration({ index, sizes }) {
   const illustration = illustrations[index];
 
   return (
-    <div className={styles.image}>
+    <div
+      className={`${styles.image} ${styles.featuredImage}`}
+    >
       <Image
         src={illustration.src}
         alt={illustration.alt}

@@ -40,6 +40,12 @@
   object-fit: cover;
 }
 
+.featuredImage {
+  overflow: hidden;
+  border-radius: 2.25rem;
+  box-shadow: 0 1.5rem 3.5rem rgba(11, 47, 33, 0.2);
+}
+
 .card {
   width: 75%;
   margin: 0 auto;

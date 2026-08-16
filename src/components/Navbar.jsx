@@ -41,6 +41,7 @@ export default function Navbar() {
         >
           <div className="navbar-links">
             <Link href="/about" onClick={() => setMenuOpen(false)}>{isAmharic ? "ስለ እኛ" : "About"}</Link>
+            <Link href="/team" onClick={() => setMenuOpen(false)}>{isAmharic ? "ቡድን" : "Team"}</Link>
             <Link href="/solutions" onClick={() => setMenuOpen(false)}>{isAmharic ? "መፍትሔዎች" : "Solutions"}</Link>
             <Link href="/how-it-works" onClick={() => setMenuOpen(false)}>{isAmharic ? "እንዴት እንደሚሰራ" : "How it works"}</Link>
           </div>
