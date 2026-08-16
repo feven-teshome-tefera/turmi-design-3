@@ -196,9 +196,8 @@
 @media (max-width: 850px) {
   .team-hero { height: auto; min-height: 100svh; padding-top: 8rem; grid-template-columns: 1fr; overflow: visible; }
   .team-orbit { width: min(82vw, 440px); margin: 2rem auto 0; }
-  .team-discipline-grid { width: calc(100% + 1.5rem); padding-right: 1.5rem; grid-template-columns: repeat(4, minmax(76vw, 1fr)); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
-  .team-discipline-grid::-webkit-scrollbar { display: none; }
-  .team-discipline { min-height: 390px; scroll-snap-align: start; }
+  .team-discipline-grid { width: 100%; padding-right: 0; grid-template-columns: 1fr; overflow: visible; }
+  .team-discipline { min-height: 390px; }
   .team-disciplines { min-height: auto; padding-block: 6rem; display: block; }
   .team-manifesto { padding-top: 7rem; }
   .team-word-loop { margin-top: 6rem; }
