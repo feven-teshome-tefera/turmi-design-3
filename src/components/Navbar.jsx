@@ -1,14 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useLanguage } from "./LanguageContext";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [languageOpen, setLanguageOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
   const { language, chooseLanguage: setSiteLanguage, isAmharic } = useLanguage();
+  const hasLightHero = ["/about", "/solutions", "/team", "/partner", "/how-it-works"].includes(pathname);
+
+  useEffect(() => {
+    const updateHeader = () => setScrolled(window.scrollY > 12);
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
+    return () => window.removeEventListener("scroll", updateHeader);
+  }, [pathname]);
 
   const chooseLanguage = (value) => {
     setSiteLanguage(value);
@@ -16,7 +27,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="site-header">
+    <header className={`site-header${scrolled ? " is-scrolled" : ""}${hasLightHero ? " is-light" : ""}${menuOpen ? " is-menu-open" : ""}`}>
       <nav className="navbar" aria-label="Primary navigation">
         <Link className="navbar-logo" href="/" aria-label="Turmi home">
           <Image src="/turmi-logo.png" alt="" width={34} height={34} priority />

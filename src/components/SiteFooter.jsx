@@ -13,6 +13,7 @@ export default function SiteFooter() {
         </p>
         <nav className="footer-links" aria-label="Footer navigation">
           <Link href="/about">{isAmharic ? "ስለ እኛ" : "About"}</Link>
+          <Link href="/team">{isAmharic ? "ቡድን" : "Team"}</Link>
           <Link href="/solutions">{isAmharic ? "መፍትሔዎች" : "Solutions"}</Link>
           <Link href="/how-it-works">{isAmharic ? "እንዴት እንደሚሰራ" : "How it works"}</Link>
           <Link href="/partner">{isAmharic ? "ከቱርሚ ጋር ይተባበሩ" : "Partner with Turmi"}</Link>

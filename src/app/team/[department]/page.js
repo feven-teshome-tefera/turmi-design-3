@@ -43,7 +43,14 @@ const departmentTeams = {
   },
 };
 
-const portraits = ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg", "img5.jpg", "img6.jpg"];
+const portraits = [
+  "jurica-koletic-7YVZYZeITc8-unsplash.jpg",
+  "christina-wocintechchat-com-m-Zpzf7TLj_gA-unsplash(1).jpg",
+  "ryan-hoffman-Ft4p5E9HjTQ-unsplash.jpg",
+  "christina-wocintechchat-com-m-kXmKqYOGA4Y-unsplash.jpg",
+  "tony-luginsland-bbOOTiq-EPA-unsplash.jpg",
+  "karabo-mdluli-Y7TEMCKRIgI-unsplash.jpg",
+];
 
 export default function DepartmentTeamPage() {
   const { department } = useParams();

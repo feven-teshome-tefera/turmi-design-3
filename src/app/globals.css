@@ -11,6 +11,8 @@ body {
   font-family: "Manrope", sans-serif;
 }
 
+html { scroll-behavior: smooth; }
+
 img {
   width: 100%;
   height: 100%;
@@ -106,8 +108,15 @@ section {
   left: 0;
   width: 100%;
   color: #fff;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: color 280ms ease, background-color 280ms ease, border-color 280ms ease, backdrop-filter 280ms ease;
+}
+
+.site-header.is-scrolled {
+  color: #fff;
   background: rgba(20, 20, 20, 0.55);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  border-bottom-color: rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
@@ -252,6 +261,14 @@ section {
 }
 
 .navbar-menu-button { display: none; }
+
+.site-header.is-light:not(.is-scrolled):not(.is-menu-open) { color: #171712; }
+.site-header.is-light:not(.is-scrolled):not(.is-menu-open) .navbar-links { color: #171712; }
+.site-header.is-light:not(.is-scrolled):not(.is-menu-open) .navbar a.navbar-logo { color: #171712; }
+.site-header.is-light:not(.is-scrolled):not(.is-menu-open) .navbar-logo img { filter: none; }
+.site-header.is-light:not(.is-scrolled):not(.is-menu-open) .navbar-utility { color: #171712 !important; }
+.site-header.is-light:not(.is-scrolled):not(.is-menu-open) .navbar-utility .language-globe { stroke: #171712; }
+.site-header.is-light:not(.is-scrolled):not(.is-menu-open) .navbar-partner { color: #171712 !important; }
 
 @media (min-width: 768px) {
   .hero-container { padding: 0 28px 56px; }

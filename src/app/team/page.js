@@ -2,11 +2,13 @@
 
 import { useLayoutEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Navbar from "@/components/Navbar";
 import SiteFooter from "@/components/SiteFooter";
+import AnimatedCopy from "@/components/AnimatedCopy";
 import { useLanguage } from "@/components/LanguageContext";
 import "./team.css";
 
@@ -14,6 +16,7 @@ const disciplines = [
   {
     number: "01",
     slug: "field-operations",
+    image: "/images/team/ethiopian-field-operations.png",
     title: "Field operations",
     copy: "Close to producers, partners, and the realities that shape every agricultural cycle.",
     amTitle: "የመስክ ሥራዎች",
@@ -22,6 +25,7 @@ const disciplines = [
   {
     number: "02",
     slug: "agricultural-intelligence",
+    image: "/images/team/ethiopian-agricultural-intelligence.png",
     title: "Agricultural intelligence",
     copy: "Turning field evidence, geospatial signals, and local knowledge into decisions.",
     amTitle: "የግብርና ብልህነት",
@@ -30,6 +34,7 @@ const disciplines = [
   {
     number: "03",
     slug: "capital-partnerships",
+    image: "/images/team/ethiopian-capital-partnerships.png",
     title: "Capital & partnerships",
     copy: "Designing accountable finance around production, performance, and shared outcomes.",
     amTitle: "ካፒታልና አጋርነት",
@@ -38,6 +43,7 @@ const disciplines = [
   {
     number: "04",
     slug: "product-technology",
+    image: "/images/team/ethiopian-product-technology.png",
     title: "Product & technology",
     copy: "Building calm, useful tools that make complex systems easier to operate and trust.",
     amTitle: "ምርትና ቴክኖሎጂ",
@@ -94,14 +100,30 @@ export default function TeamPage() {
         <section className="team-hero" aria-labelledby="team-heading">
           <div className="team-hero-copy">
             <p className="team-eyebrow">{isAmharic ? "የቱርሚ ቡድን" : "The team at Turmi"}</p>
-            <h1 id="team-heading">
-              {isAmharic ? "መሬትን፣ መረጃንና ካፒታልን የሚያገናኙ ሰዎች።" : "People connecting land, intelligence, and capital."}
-            </h1>
-            <p className="team-lede">
-              {isAmharic
-                ? "አስተዋይ የግብርና ፋይናንስ በርካታ የዕውቀት ዓይነቶችን ይፈልጋል። ቱርሚን ከመስክ እስከ ሞዴል ድረስ በጋራ እንገነባለን።"
-                : "Better agricultural finance takes more than one kind of expertise. We build Turmi together—from the field to the model."}
-            </p>
+            <AnimatedCopy
+              colorInitial="#c7c3b9"
+              colorAccent="#abff02"
+              colorFinal="#000000"
+              playOnMount
+              delay={0.2}
+            >
+              <h1 id="team-heading">
+                {isAmharic ? "መሬትን፣ መረጃንና ካፒታልን የሚያገናኙ ሰዎች።" : "People connecting land, intelligence, and capital."}
+              </h1>
+            </AnimatedCopy>
+            <AnimatedCopy
+              colorInitial="#c7c3b9"
+              colorAccent="#abff02"
+              colorFinal="#000000"
+              playOnMount
+              delay={0.75}
+            >
+              <p className="team-lede">
+                {isAmharic
+                  ? "አስተዋይ የግብርና ፋይናንስ በርካታ የዕውቀት ዓይነቶችን ይፈልጋል። ቱርሚን ከመስክ እስከ ሞዴል ድረስ በጋራ እንገነባለን።"
+                  : "Better agricultural finance takes more than one kind of expertise. We build Turmi together—from the field to the model."}
+              </p>
+            </AnimatedCopy>
           </div>
 
           <div className="team-orbit" aria-hidden="true">
@@ -110,9 +132,13 @@ export default function TeamPage() {
             <div className="orbit orbit-three"><i /></div>
             <div className="orbit-core"><span>Turmi</span><small>{isAmharic ? "አንድ ሥርዓት" : "one system"}</small></div>
           </div>
+
+          <a className="team-scroll-arrow" href="#team-disciplines" aria-label={isAmharic ? "ወደ ቡድኖች ይሂዱ" : "Scroll to teams"}>
+            <span aria-hidden="true">↓</span>
+          </a>
         </section>
 
-        <section className="team-disciplines" aria-labelledby="disciplines-heading">
+        <section id="team-disciplines" className="team-disciplines" aria-labelledby="disciplines-heading">
           <div className="team-section-heading">
             <p className="team-eyebrow">{isAmharic ? "እንዴት እንገነባለን" : "How we build"}</p>
             <h2 id="disciplines-heading">{isAmharic ? "የተለያዩ ክህሎቶች። አንድ ተልዕኮ።" : "Different disciplines. One mission."}</h2>
@@ -121,13 +147,16 @@ export default function TeamPage() {
           <div className="team-discipline-grid">
             {disciplines.map((item) => (
               <Link className="team-discipline" href={`/team/${item.slug}`} key={item.number}>
-                <div className="discipline-top">
-                  <span>{item.number}</span>
-                  <span className="discipline-arrow" aria-hidden="true">↗</span>
+                <div className="discipline-image">
+                  <Image src={item.image} alt="" fill sizes="(max-width: 850px) 78vw, 25vw" />
                 </div>
-                <h3>{isAmharic ? item.amTitle : item.title}</h3>
-                <p>{isAmharic ? item.amCopy : item.copy}</p>
-                <span className="discipline-cta">{isAmharic ? "ቡድኑን ይመልከቱ" : "Meet the team"}</span>
+                <div className="discipline-content">
+                  <h3>{isAmharic ? item.amTitle : item.title}</h3>
+                  <span className="discipline-cta">
+                    {isAmharic ? "ቡድኑን ይመልከቱ" : "Meet the team"}
+                    <i aria-hidden="true">↗</i>
+                  </span>
+                </div>
               </Link>
             ))}
           </div>

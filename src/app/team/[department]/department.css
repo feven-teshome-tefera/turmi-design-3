@@ -36,7 +36,10 @@
 }
 
 .department-member-image { width: 100%; aspect-ratio: 16 / 9; overflow: hidden; opacity: 0.32; border-radius: 0.5rem; transition: opacity 250ms ease; }
-.department-member-image img { display: block; }
+.department-member-image img {
+  display: block;
+  object-position: center 20%;
+}
 
 .department-names { position: absolute; z-index: 2; right: 2rem; bottom: 2rem; display: flex; align-items: flex-end; flex-direction: column; }
 .department-member-name { color: #596b61; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.15rem, 2vw, 1.75rem); font-weight: 500; line-height: 1.15; transition: color 250ms ease; will-change: transform; }

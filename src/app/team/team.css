@@ -11,12 +11,14 @@
 }
 
 .team-hero {
-  min-height: 100svh;
-  padding: 9rem max(5vw, 1.5rem) 5rem;
+  height: 100svh;
+  min-height: 0;
+  padding: 7rem max(5vw, 1.5rem) 4.5rem;
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(340px, 0.8fr);
   align-items: center;
   gap: 5vw;
+  overflow: hidden;
 }
 
 .team-hero-copy { position: relative; z-index: 2; }
@@ -40,6 +42,25 @@
   justify-self: center;
   border-radius: 50%;
 }
+
+.team-scroll-arrow {
+  position: absolute;
+  z-index: 3;
+  bottom: 1.5rem;
+  left: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  color: #f5f1e8;
+  background: #173929;
+  border-radius: 50%;
+  text-decoration: none;
+  transform: translateX(-50%);
+  box-shadow: 0 0.75rem 2rem rgba(23, 57, 41, 0.2);
+}
+
+.team-scroll-arrow span { animation: team-arrow-bounce 1.5s ease-in-out infinite; }
 
 .orbit,
 .orbit-core { position: absolute; inset: 50%; border-radius: 50%; }
@@ -80,8 +101,15 @@
 .orbit-core span { font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.25rem, 2.5vw, 2rem); }
 .orbit-core small { margin-top: 0.2rem; opacity: 0.65; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; }
 
-.team-disciplines { padding: 8rem max(5vw, 1.5rem) 10rem; background: #173929; }
-.team-section-heading { max-width: 1280px; margin: 0 auto 5rem; color: #f5f1e8; }
+.team-disciplines {
+  min-height: 100svh;
+  padding: clamp(3.5rem, 6svh, 5rem) max(5vw, 1.5rem);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: #173929;
+}
+.team-section-heading { width: 100%; max-width: 1280px; margin: 0 auto clamp(2rem, 4svh, 3rem); color: #f5f1e8; }
 .team-section-heading .team-eyebrow { color: #d9ad56; }
 
 .team-section-heading h2,
@@ -95,36 +123,42 @@
   line-height: 0.98;
 }
 
+.team-section-heading h2 { font-size: clamp(2.5rem, 4.5vw, 4.75rem); }
+
 .team-discipline-grid {
   max-width: 1280px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
 }
 
 .team-discipline {
-  min-height: 360px;
-  padding: clamp(1.75rem, 3vw, 3rem);
-  display: flex;
-  flex-direction: column;
+  min-width: 0;
+  min-height: clamp(310px, 48svh, 370px);
+  display: grid;
+  grid-template-rows: 1fr auto;
+  overflow: hidden;
   color: #173929;
   background: #f5f1e8;
-  border-radius: 1.5rem;
+  border: 1px solid rgba(245, 241, 232, 0.22);
+  border-radius: 1.1rem;
   text-decoration: none;
-  transition: transform 350ms ease, background-color 350ms ease;
+  box-shadow: 0 1rem 2.5rem rgba(5, 24, 17, 0.14);
+  transition: transform 350ms ease, box-shadow 350ms ease;
 }
 
-.team-discipline:nth-child(2),
-.team-discipline:nth-child(3) { background: #d9ad56; }
-.team-discipline:hover { z-index: 1; transform: translateY(-8px) rotate(-0.5deg); }
+.team-discipline:hover { z-index: 1; transform: translateY(-10px); box-shadow: 0 1.5rem 3rem rgba(5, 24, 17, 0.3); }
 
-.discipline-top { display: flex; align-items: center; justify-content: space-between; color: #766b54; font-size: 0.75rem; }
-.discipline-arrow { font-size: 1.2rem; transition: transform 300ms ease; }
-.team-discipline:hover .discipline-arrow { transform: translate(4px, -4px); }
-.team-discipline h3 { max-width: 440px; margin: auto 0 1rem; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2rem, 3.6vw, 3.8rem); letter-spacing: -0.05em; line-height: 0.98; }
-.team-discipline p { max-width: 520px; color: #44574d; font-size: clamp(1rem, 1.3vw, 1.15rem); font-weight: 450; }
-.discipline-cta { margin-top: 1.5rem; font-size: 0.72rem; font-weight: 750; letter-spacing: 0.12em; text-transform: uppercase; }
+.discipline-image { position: relative; min-height: clamp(175px, 27svh, 215px); overflow: hidden; background: #29483c; }
+.discipline-image::after { position: absolute; inset: 0; content: ""; background: linear-gradient(180deg, rgba(10, 35, 26, 0.08), rgba(10, 35, 26, 0.42)); }
+.discipline-image img { transition: transform 600ms cubic-bezier(0.2, 0.75, 0.25, 1); }
+.team-discipline:hover .discipline-image img { transform: scale(1.06); }
+.discipline-content { padding: 1.25rem; }
+.team-discipline h3 { min-height: 2.1em; margin: 0 0 1.25rem; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.45rem, 2.25vw, 2.15rem); letter-spacing: -0.045em; line-height: 1.02; }
+.discipline-cta { display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.11em; border-top: 1px solid rgba(23, 57, 41, 0.2); text-transform: uppercase; }
+.discipline-cta i { width: 2rem; height: 2rem; display: grid; place-items: center; color: #f5f1e8; background: #173929; border-radius: 50%; font-size: 0.9rem; font-style: normal; transition: transform 300ms ease; }
+.team-discipline:hover .discipline-cta i { transform: rotate(45deg); }
 
 .team-manifesto { padding: 10rem max(5vw, 1.5rem) 4rem; text-align: center; }
 .team-manifesto > .team-eyebrow,
@@ -154,19 +188,25 @@
 
 @keyframes team-spin { to { transform: rotate(360deg); } }
 @keyframes team-marquee { to { transform: translateX(-100%); } }
+@keyframes team-arrow-bounce {
+  0%, 100% { transform: translateY(-3px); }
+  50% { transform: translateY(4px); }
+}
 
 @media (max-width: 850px) {
-  .team-hero { padding-top: 8rem; grid-template-columns: 1fr; }
+  .team-hero { height: auto; min-height: 100svh; padding-top: 8rem; grid-template-columns: 1fr; overflow: visible; }
   .team-orbit { width: min(82vw, 440px); margin: 2rem auto 0; }
-  .team-discipline-grid { grid-template-columns: 1fr; }
-  .team-discipline { min-height: 310px; }
-  .team-disciplines { padding-block: 6rem; }
+  .team-discipline-grid { width: calc(100% + 1.5rem); padding-right: 1.5rem; grid-template-columns: repeat(4, minmax(76vw, 1fr)); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .team-discipline-grid::-webkit-scrollbar { display: none; }
+  .team-discipline { min-height: 390px; scroll-snap-align: start; }
+  .team-disciplines { min-height: auto; padding-block: 6rem; display: block; }
   .team-manifesto { padding-top: 7rem; }
   .team-word-loop { margin-top: 6rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .orbit,
-  .team-word-loop span { animation: none; }
+  .team-word-loop span,
+  .team-scroll-arrow span { animation: none; }
   .team-discipline { transition: none; }
 }
