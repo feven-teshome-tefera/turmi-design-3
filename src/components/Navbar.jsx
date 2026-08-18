@@ -30,8 +30,7 @@ export default function Navbar() {
     <header className={`site-header${scrolled ? " is-scrolled" : ""}${hasLightHero ? " is-light" : ""}${menuOpen ? " is-menu-open" : ""}`}>
       <nav className="navbar" aria-label="Primary navigation">
         <Link className="navbar-logo" href="/" aria-label="Turmi home">
-          <Image src="/turmi-logo.png" alt="" width={34} height={34} priority />
-          <span>Turmi</span>
+          <Image src="/navbar-logo.svg" alt="Turmi" width={48} height={48} priority />
         </Link>
 
         <button

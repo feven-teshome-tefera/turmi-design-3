@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Turmi</title>
+  <circle cx="256" cy="256" r="246" fill="#fffdfb"/>
+  <circle cx="256" cy="256" r="238" fill="none" stroke="#004c31" stroke-width="9"/>
+  <text
+    x="256"
+    y="307"
+    fill="#004c31"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="171"
+    letter-spacing="-10"
+    text-anchor="middle"
+  >Turmı</text>
+  <circle cx="403" cy="218" r="9" fill="#e0a500"/>
+</svg>
